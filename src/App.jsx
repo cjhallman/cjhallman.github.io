@@ -7,7 +7,7 @@ export default function App() {
           Software Development Engineer
         </p>
         <p className="mt-4 text-sm text-gray-500">
-          Interactive portfolio coming soon 🌳
+          Interactive portfolio coming soon! 🌳
         </p>
       </div>
     </div>
