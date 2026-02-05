@@ -1,17 +1,27 @@
+import profileImage from './assets/Connor-Hallman-HS-sm.jpg';
+
 export const treeData = {
   id: 'root',
-  label: 'Connor Hallman',
+  type: 'profile',
+  data:{
+    label: 'Connor Hallman',
+    name: 'Connor Hallman',
+    title: 'Software Engineer',
+    image: profileImage
+  },
   children: [
     {
       id: 'career',
-      label: 'Career',
+      data: {
+        label: 'Career',
+      },
       children: [
-        { id: 'amazon', label: 'Amazon', children: [
-          { id: 'fis', label: 'AWS Fault Injection Service (FIS)' },
-          { id: 'csba', label: 'Customer Service by Amazon (CSBA)' },
+        { id: 'amazon', data: { label: 'Amazon' }, children: [
+          { id: 'fis', data: { label: 'AWS Fault Injection Service (FIS)' }},
+          { id: 'csba', data: { label: 'Customer Service by Amazon (CSBA)' }},
         ]},
-        { id: 'infinitive', label: 'Infinitive'},
-        { id: 'fast', label: 'FAST Enterprises'},
+        { id: 'infinitive', data: { label: 'Infinitive' }},
+        { id: 'fast', data: { label: 'FAST Enterprises' }},
       ],
     },
   ],
