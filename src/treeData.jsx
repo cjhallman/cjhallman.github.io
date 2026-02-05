@@ -1,4 +1,4 @@
-import profileImage from './assets/Connor-Hallman-HS-sm.jpg';
+import profileImage from './assets/Connor.jpg';
 
 export const treeData = {
   id: 'root',

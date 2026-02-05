@@ -1,0 +1,13 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connor Hallman logo">
+  <!-- Background -->
+  <circle cx="64" cy="64" r="60" fill="#0f172a"></circle>
+
+  <!-- Code brackets -->
+  <path d="M36 40 L26 64 L36 88" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M92 40 L102 64 L92 88" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- Initials (optically centered) -->
+  <text x="64" y="67" text-anchor="middle" dominant-baseline="middle" font-size="42" font-weight="700" font-family="Inter, system-ui, -apple-system, sans-serif" fill="#e5e7eb" letter-spacing="3">
+    CH
+  </text>
+</svg>
