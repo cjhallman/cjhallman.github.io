@@ -42,3 +42,8 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid;
+}
