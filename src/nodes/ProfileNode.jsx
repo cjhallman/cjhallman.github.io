@@ -4,7 +4,7 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export default function ProfileNode({ data }) {
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-4 w-64 text-center border border-gray-200">
+    <div className="bg-blue-50 border border-blue-200 rounded-2xl shadow-xl p-4 w-64 text-center">
       {/* Avatar */}
       <img
         src={data.image}

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { ReactFlow, applyNodeChanges, applyEdgeChanges, addEdge } from '@xyflow/react';
 import { treeData } from './treeData'
-import { NODE_TYPES, NODE_HEIGHTS, NODE_WIDTHS } from './nodes/NodeTypes'
+import { LEVEL_LAYOUT, NODE_TYPES, NODE_HEIGHTS, NODE_WIDTHS, NODE_LEVEL_LAYOUT } from './nodes/NodeTypes'
 import '@xyflow/react/dist/style.css';
 
 // Utility: flatten tree JSON into React Flow nodes and edges
@@ -18,17 +18,25 @@ const generateFlowElements = (tree) => {
       if (node.data.children.length > 0){
           const currentHeight = NODE_HEIGHTS[node.data.type] ?? NODE_HEIGHTS.default
           const currentWidth = NODE_WIDTHS[node.data.type] ?? NODE_WIDTHS.default
-          const verticalSpacing = currentHeight + spacingY
           node.data.children.forEach((child, i) => {
             const childWidth = NODE_WIDTHS[child.type] ?? NODE_WIDTHS.default
-            const horizontalSpacing = (currentWidth - childWidth)/2 - (node.data.children.length - 1) * (spacingX + childWidth) / 2 + i * (spacingX + childWidth)
+            const childHeight = NODE_HEIGHTS[child.type] ?? NODE_HEIGHTS.default
+            let verticalSpacing;
+            let horizontalSpacing;
+            if (NODE_LEVEL_LAYOUT[node.data.type] == LEVEL_LAYOUT.VERTICAL){
+              verticalSpacing = currentHeight + spacingY + i * (childHeight + spacingY)
+              horizontalSpacing = 20
+            } else{
+              verticalSpacing = currentHeight + spacingY
+              horizontalSpacing = (currentWidth - childWidth)/2 - (node.data.children.length - 1) * (spacingX + childWidth) / 2 + i * (spacingX + childWidth)
+            }
             nodes_queue.push({
               data: child,
               x: node.x + horizontalSpacing,
-                y: node.y + verticalSpacing,
-                level: node.level + 1,
-                  parentId: node.data.id
-                })
+              y: node.y + verticalSpacing,
+              level: node.level + 1,
+              parentId: node.data.id
+            })
           })
         }
     }

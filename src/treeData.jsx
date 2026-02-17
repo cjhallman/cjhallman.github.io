@@ -1,4 +1,5 @@
 import profileImage from './assets/Connor.jpg';
+import { BriefcaseBusiness, Pickaxe } from "lucide-react";
 
 export const treeData = {
   id: 'root',
@@ -12,17 +13,27 @@ export const treeData = {
   children: [
     {
       id: 'career',
+      type: 'category',
       data: {
         label: 'Career',
+        icon: <BriefcaseBusiness />
       },
       children: [
-        { id: 'amazon', data: { label: 'Amazon' }, children: [
-          { id: 'fis', data: { label: 'AWS Fault Injection Service (FIS)' }},
-          { id: 'csba', data: { label: 'Customer Service by Amazon (CSBA)' }},
-        ]},
-        { id: 'infinitive', data: { label: 'Infinitive' }},
-        { id: 'fast', data: { label: 'FAST Enterprises' }},
+        { id: 'amazon', type: 'org', data: { label: 'Amazon' }},
+        { id: 'infinitive', type: 'org', data: { label: 'Infinitive' }},
+        { id: 'fast', type: 'org', data: { label: 'FAST Enterprises' }},
       ],
     },
+    {
+      id: 'sideprojects',
+      type: 'category',
+      data: {
+        label: 'Side Projects',
+        icon: <Pickaxe />
+      },
+      children: [
+        { id: 'backgammon', type: 'org', data: { label: 'Backgammon' }}
+      ]
+    }
   ],
 }
